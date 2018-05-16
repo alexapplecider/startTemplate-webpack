@@ -1,0 +1,8 @@
+mixin slide-news(data)
+	each item in data
+		.slide-news
+			img.slide-news__img(src=item.img, alt="")
+			strong.slide-news__header!=item.title
+			p.slide-news__text!=item.text
+			a.slide-news__link(href=item.href) Далее...
+
