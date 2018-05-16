@@ -1,19 +1,32 @@
+// Plugins css
+@import "libraries/font-awesome.min.css";
+// @import "libraries/animate.css";
+@import "libraries/owl.carousel.min.css";
+// @import "libraries/slick.css";
 // Global
 @import "global/fonts";
-@import "libraries/font-awesome.min.css";
-@import "libraries/animate.css";
-@import "libraries/owl.carousel.min.css";
-@import "libraries/slick.css";
 @import "global/normalize";
 @import "global/general";
 @import "global/scaffolding";
 // Components
 @import "components/header";
+@import "components/left-column";
+@import "components/main-view";
+@import "components/news";
 @import "components/footer";
 // общие стили
+main.main {
+	& .container {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $tablet) {
+      flex-direction: column;
+    }
+	}
+}
+
 a {
   transition: 0.3s;
-  color: red !important;
 }
 
 .btn {
@@ -25,14 +38,8 @@ a {
   border: 1px solid #1c96ce;
   cursor: pointer;
   transition: 0.3s;
+
   @media (max-width: $mobile) {
     font-size: 13px;
   }
-}
-
-.logo {
-  flex-basis: 100%;
-  max-width: 90px;
-  max-height: 47px;
-  border: 5px solid black;
 }

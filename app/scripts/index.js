@@ -1,7 +1,9 @@
-import '../scss/main.scss'
+import '../styles/main.scss'
 import './polyfill'
-// import 'owl.carousel/dist/assets/owl.carousel.css'
-import 'owl.carousel'
+// Plugins js
+import 'owl.carousel/dist/owl.carousel'
+// My scripts
+import './script'
 
 if (process.env.NODE_ENV !== 'production') {
   require('./../pug/pages/index.pug')

@@ -1,0 +1,100 @@
+.news {
+  background-color: #eeeeee;
+  padding-top: 31px;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+.news-list {
+  position: relative;
+  &__item {
+    width: 221px;
+    margin: 0 auto;
+    color: #000000;
+    font-family: "Vida 31 Pro";
+    font-size: 14px;
+    outline: none;
+    @media (max-width: 690px) {
+      width: initial;
+    }
+    &-date {
+      margin-right: 7px;
+      opacity: 0.4;
+      line-height: 20px;
+    }
+    &-type {
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 12px;
+      padding: 2px 5px;
+      border-radius: 2px;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Vida 31 Pro";
+      font-size: 10px;
+      font-weight: 400;
+      text-transform: uppercase;
+      &--action {
+        position: relative;
+        padding: 3px 14px;
+        background-color: #c5e71b;
+        color: #000000;
+        font-family: "Vida 33 Pro";
+        font-weight: 400;
+        &::before {
+          position: absolute;
+          top: -4px;
+          left: -7px;
+          content: "";
+          border: 15px solid transparent;
+          border-top: 13px solid #eee;
+          transform: rotate(-90deg);
+        }
+        &::after {
+          position: absolute;
+          top: -4px;
+          right: -7px;
+          content: "";
+          border: 15px solid transparent;
+          border-top: 13px solid #eee;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &-text {
+      line-height: 18px;
+      @media(max-width: $mobile) {
+        font-size: 22px;
+        line-height: 28.08px;
+      }
+    }
+  }
+  & .owl-dots {
+    display: none;
+    margin-top: 17px;
+    align-self: center;
+    color: transparent;
+    @media (max-width: $tablet) {
+      display: flex;
+      justify-content: center;
+    }
+    & button {
+      display: inline-block;
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    & button.owl-dot.active {
+      background-color: #bebebe;
+    }
+    & button.owl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: black;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

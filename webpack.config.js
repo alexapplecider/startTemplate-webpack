@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-const StylelintPlugin = require('stylelint-webpack-plugin')
+// const StylelintPlugin = require('stylelint-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CleanPlugin = require('clean-webpack-plugin')
@@ -30,12 +30,20 @@ const PATHS = {
   build: path.join(__dirname, 'build')
 }
 
-const lintStylesOptions = {
-  context: path.resolve(__dirname, `${PATHS.app}/scss`),
-  syntax: 'scss',
-  emitErrors: false
-  // fix: true
+const PROJECTPLUGINS = {
+  jQuery: {
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery'
+  }
 }
+
+// const lintStylesOptions = {
+//   context: path.resolve(__dirname, `${PATHS.app}/scss`),
+//   syntax: 'scss',
+//   emitErrors: false
+//   // fix: true
+// }
 
 const cssPreprocessorLoader = { loader: 'fast-sass-loader' }
 
@@ -56,7 +64,8 @@ const commonConfig = merge([
         template: './pug/pages/index.pug'
       }),
       new FriendlyErrorsPlugin(),
-      new StylelintPlugin(lintStylesOptions)
+      new webpack.ProvidePlugin(PROJECTPLUGINS.jQuery)
+      // new StylelintPlugin(lintStylesOptions)
     ],
     module: {
       noParse: /\.min\.js/
@@ -140,7 +149,7 @@ const productionConfig = merge([
     }
   }),
   // should go after loading images
-  parts.optimizeImages(),
+  // parts.optimizeImages(),
   parts.setFreeVariable(
     'process.env.NODE_ENV',
     'production'
@@ -174,13 +183,3 @@ module.exports = env => {
 
   return merge(commonConfig, developmentConfig)
 }
-
-// module.exports = {
-//   plugins: [
-//     new webpack.ProvidePlugin({
-//       $: 'jquery',
-//       jQuery: 'jquery',
-//       'window.jQuery': 'jquery'
-//     })
-//   ]
-// }

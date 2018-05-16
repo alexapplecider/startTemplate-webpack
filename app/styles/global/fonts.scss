@@ -1,4 +1,5 @@
 $fa-font-path: "../fonts/font-awesome/" !default;
+$fa-font: "../fonts/" !default;
 $fa-version: "4.7.0" !default;
 @font-face {
   font-family: 'FontAwesome';
@@ -8,6 +9,22 @@ $fa-version: "4.7.0" !default;
   url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
   url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
   url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg'); //  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vida 31 Pro';
+  src: url('#{$fa-font}/Vida31Pro.woff2') format('woff2'),
+  url('#{$fa-font}/Vida31Pro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vida 33 Pro';
+  src: url('#{$fa-font}/Vida33Pro.woff2') format('woff2'),
+  url('#{$fa-font}/Vida33Pro.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

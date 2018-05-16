@@ -1,0 +1,115 @@
+.main-view {
+  width: 874px;
+  padding-bottom: 145px;
+  @media (max-width: $tablet) {
+    width: auto;
+  }
+  &__header {
+    margin: 0;
+    margin-bottom: 41px;
+    color: #414141;
+    font-family: "Vida 33 Pro";
+    font-size: 36px;
+    font-weight: 400;
+  }
+}
+
+.notification {
+  position: relative;
+  margin-bottom: 30px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 60px;
+  padding-bottom: 30px;
+  border: 1px solid #edeeee;
+  border-radius: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &--active {
+    background-color: #fcfcfc;
+  }
+  &__date {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 24px;
+    padding: 5px;
+    background-color: #edeeee;
+    color: #000000;
+    font-family: "Vida 31 Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &__header {
+    margin: 0;
+    margin-bottom: 18px;
+    color: #000000;
+    font-family: "Vida 33 Pro";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  &__text {
+    display: none;
+    color: #5a5a58;
+    font-family: "Vida 31 Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  &__btn {
+    position: absolute;
+    top: 58px;
+    right: 32px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    outline: none;
+    &::before {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 2px solid #b8b8b8;
+    }
+    &::after {
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      content: "";
+      width: 5px;
+      height: 5px;
+      background-color: transparent;
+      border: 2px solid #b8b8b8;
+      border-radius: 2px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+    }
+    &:hover::before {
+      border: 2px solid #893b67;
+    }
+    &--active {
+      &::before {
+        border: 2px solid #893b67;
+        background-color: #893b67;
+      }
+      &::after {
+        top: 11px;
+        border-color: #ffffff;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transform: rotate(225deg);
+      }
+    }
+  }
+}
+
+.notification--active .notification__text {
+  display: block !important;
+}

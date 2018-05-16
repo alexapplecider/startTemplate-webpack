@@ -136,7 +136,7 @@ exports.loadCSS = ({ include, exclude, use } = {}) => ({
 exports.extractCSS = ({ include, exclude, use } = {}) => {
   // Output extracted CSS to a file
   const plugin = new ExtractTextPlugin({
-    filename: 'scss/[name].[contenthash:8].css',
+    filename: 'styles/[name].[contenthash:8].css',
     allChunks: true
   })
 
@@ -165,10 +165,8 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
     rules: [
       {
         test: /\.(png|jpg|svg)$/,
-
         include,
         exclude,
-
         use: {
           loader: 'url-loader',
           options
@@ -178,47 +176,48 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
   }
 })
 
-exports.optimizeImages = ({ include, exclude } = {}) => ({
-  module: {
-    rules: [
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+// exports.optimizeImages = ({ include, exclude } = {}) => ({
+//   module: {
+//     rules: [
+//       {
+//         test: /\.(gif|png|jpeg|jpg|svg)$/i,
+//         // test: /\.(gif|png|jpe?g|svg)$/i,
 
-        include,
-        exclude,
+//         include,
+//         exclude,
 
-        use: {
+//         use: {
 
-          loader: 'image-webpack-loader',
+//           loader: 'image-webpack-loader',
 
-          options: {
-            progressive: true,
+//           options: {
+//             progressive: true,
 
-            // optimizationLevel: 7,
+//             // optimizationLevel: 7,
 
-            gifsicle: {
-              interlaced: false
-            },
+//             gifsicle: {
+//               interlaced: false
+//             },
 
-            /*
-            mozjpeg: {
+//             /*
+//             mozjpeg: {
 
-            },
+//             },
 
-            svgo: {
+//             svgo: {
 
-            }, */
+//             }, */
 
-            pngquant: {
-              quality: '65-90',
-              speed: 4
-            }
-          }
-        }
-      }
-    ]
-  }
-})
+//             pngquant: {
+//               quality: '65-90',
+//               speed: 4
+//             }
+//           }
+//         }
+//       }
+//     ]
+//   }
+// })
 
 exports.loadFonts = ({ include, exclude, options } = {}) => ({
   module: {
