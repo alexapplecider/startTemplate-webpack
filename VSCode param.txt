@@ -1,34 +1,46 @@
 // Поместите параметры в этот файл, чтобы перезаписать параметры по умолчанию.
 {
-    "editor.tabSize": 2,
-    "editor.minimap.enabled": false,
-    "editor.fontSize": 14,
-    "html.format.enable": false,
-    "editor.formatOnSave": false,
-    "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 0,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.statusBar.visible": true,
-    "vsicons.projectDetection.disableDetect": true,
-    "vsicons.dontShowNewVersionMessage": true,
-    "editor.wordWrap": "on",
-    "workbench.colorTheme": "Adapta Nokto",
-    "[cpp]": {
-        "editor.quickSuggestions": false
-    },
-    "[c]": {
-        "editor.quickSuggestions": false
-    },
-    "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe",
-    "explorer.confirmDragAndDrop": false,
-    "workbench.startupEditor": "welcomePage"
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 14,
+  "html.format.enable": false,
+  "editor.formatOnSave": false,
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 0,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.statusBar.visible": true,
+  "vsicons.projectDetection.disableDetect": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Adapta Nokto",
+  "[cpp]": {
+      "editor.quickSuggestions": false
+  },
+  "[c]": {
+      "editor.quickSuggestions": false
+  },
+  "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe",
+  "explorer.confirmDragAndDrop": false,
+  "workbench.startupEditor": "welcomePage"
 }
 
 // Сокращение для обёртки в тэг
 {
-    "key": "cmd+alt+g",
-    "command": "editor.emmet.action.wrapWithAbbreviation",
-    "when": "editorFocus"
-  },
+  "key": "cmd+alt+g",
+  "command": "editor.emmet.action.wrapWithAbbreviation",
+  "when": "editorFocus"
+},
+
+// Плагины
+Beautify
+ESLint
+Foundation 6 Snippets
+Git Blame
+Linux Themes for VS Code
+Prettier - Code formatter
+Pug
+Pug beautify
+scss-lint
+vscode-icons
