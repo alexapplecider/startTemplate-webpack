@@ -176,48 +176,41 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
   }
 })
 
-// exports.optimizeImages = ({ include, exclude } = {}) => ({
-//   module: {
-//     rules: [
-//       {
-//         test: /\.(gif|png|jpeg|jpg|svg)$/i,
-//         // test: /\.(gif|png|jpe?g|svg)$/i,
-
-//         include,
-//         exclude,
-
-//         use: {
-
-//           loader: 'image-webpack-loader',
-
-//           options: {
-//             progressive: true,
-
-//             // optimizationLevel: 7,
-
-//             gifsicle: {
-//               interlaced: false
-//             },
-
-//             /*
-//             mozjpeg: {
-
-//             },
-
-//             svgo: {
-
-//             }, */
-
-//             pngquant: {
-//               quality: '65-90',
-//               speed: 4
-//             }
-//           }
-//         }
-//       }
-//     ]
-//   }
-// })
+exports.optimizeImages = ({ include, exclude } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        include,
+        exclude,
+        use: {
+          loader: 'image-webpack-loader',
+          options: {
+            mozjpeg: {
+              progressive: true,
+              quality: 65
+            },
+            // optipng.enabled: false will disable optipng
+            optipng: {
+              enabled: true
+            },
+            pngquant: {
+              quality: '65-90',
+              speed: 4
+            },
+            gifsicle: {
+              interlaced: false
+            },
+            // the webp option will enable WEBP
+            webp: {
+              quality: 75
+            }
+          }
+        }
+      }
+    ]
+  }
+})
 
 exports.loadFonts = ({ include, exclude, options } = {}) => ({
   module: {

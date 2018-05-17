@@ -141,15 +141,8 @@ const productionConfig = merge([
       safe: true
     }
   }),
-  parts.loadImages({
-    include: PATHS.app,
-    options: {
-      limit: 15000,
-      name: 'images/[name].[hash:8].[ext]'
-    }
-  }),
-  // should go after loading images
-  // parts.optimizeImages(),
+  parts.loadImages({include: PATHS.app}),
+  parts.optimizeImages(),
   parts.setFreeVariable(
     'process.env.NODE_ENV',
     'production'
@@ -171,7 +164,8 @@ const developmentConfig = merge([
     port: process.env.PORT
   }),
   parts.loadCSS({ include: PATHS.app, use: [cssPreprocessorLoader] }),
-  parts.loadImages({include: PATHS.app})
+  parts.loadImages({include: PATHS.app}),
+  parts.optimizeImages()
 ])
 
 module.exports = env => {

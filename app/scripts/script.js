@@ -2,10 +2,8 @@ import $ from 'jquery'
 
 $(document).ready(function () {
   // кнопка мобильного меню
-  var mobMenuButton = $('.mobile-menu__btn'),
-    mobMenuBlock = $('.mobile-menu-block')
   $('.mobile-menu__btn').on('click', function (event) {
-    mobMenuBlock.toggleClass('mobile-menu-block--show')
+    $('.mobile-menu-block').toggleClass('mobile-menu-block--show')
   })
 
   //      Настройка списка в мобильном меню

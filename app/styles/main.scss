@@ -27,6 +27,10 @@ main.main {
 
 a {
   transition: 0.3s;
+  &:hover {
+    text-decoration: underline;
+  }
+
 }
 
 .btn {
