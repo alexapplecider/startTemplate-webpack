@@ -1,8 +1,12 @@
 import '../styles/main.scss'
 import './polyfill'
-// Plugins js
+
+//   Plugins js
 import 'owl.carousel/dist/owl.carousel'
-// My scripts
+// import './wow.min'
+// import './slick.min'
+
+//  My scripts
 import './script'
 
 if (process.env.NODE_ENV !== 'production') {

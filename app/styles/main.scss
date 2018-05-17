@@ -1,49 +1,17 @@
-// Plugins css
+//  Plugins css
 @import "libraries/font-awesome.min.css";
 // @import "libraries/animate.css";
 @import "libraries/owl.carousel.min.css";
 // @import "libraries/slick.css";
-// Global
+
+//  Global
 @import "global/fonts";
 @import "global/normalize";
 @import "global/general";
 @import "global/scaffolding";
-// Components
+
+//  Components
 @import "components/header";
-@import "components/left-column";
-@import "components/main-view";
+// @import "components/component";
 @import "components/news";
 @import "components/footer";
-// общие стили
-main.main {
-	& .container {
-		display: flex;
-		justify-content: space-between;
-		@media (max-width: $tablet) {
-      flex-direction: column;
-    }
-	}
-}
-
-a {
-  transition: 0.3s;
-  &:hover {
-    text-decoration: underline;
-  }
-
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 38px;
-  font-size: 16px;
-  line-height: 20px;
-  margin-top: 15px;
-  border: 1px solid #1c96ce;
-  cursor: pointer;
-  transition: 0.3s;
-
-  @media (max-width: $mobile) {
-    font-size: 13px;
-  }
-}

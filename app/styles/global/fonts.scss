@@ -1,6 +1,7 @@
 $fa-font-path: "../fonts/font-awesome/" !default;
 $fa-font: "../fonts/" !default;
 $fa-version: "4.7.0" !default;
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('#{$fa-font-path}/fontawesome-webfont.eot?v=#{$fa-version}');
